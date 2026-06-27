@@ -8,3 +8,11 @@ python-dateutil
 # FinBERT
 transformers
 torch
+
+# LLM 에이전트 (sentiment_llm.py)
+anthropic
+pydantic
+
+# 백테스트 검증 (backtest.py)
+yfinance
+scipy
