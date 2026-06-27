@@ -31,7 +31,7 @@ def compute_timeseries(rows: list[dict], out_dir: Path) -> None:
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df = df.dropna(subset=["date", "sentence"]).copy()
 
-    from .sentiment import predict_labels
+    from .backend import predict_labels  # SENTIMENT_BACKEND 로 finbert/llm 토글
     df["label"] = predict_labels(df["sentence"].astype(str).tolist())
 
     df["positive"] = (df["label"] == 1).astype(float)

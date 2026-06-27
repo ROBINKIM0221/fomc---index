@@ -7,6 +7,9 @@ from .preprocess import preprocess_text_files
 from .aggregate import compute_timeseries
 
 def run_online():
+    from .backend import active_backend
+    print("[info] sentiment backend =", active_backend())
+
     statements = discover_statements()
     minutes = discover_minutes_from_calendar()
 
