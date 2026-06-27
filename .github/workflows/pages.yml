@@ -53,6 +53,11 @@ jobs:
 
       - name: Run pipeline (ONLINE)
         env:
+          # 분석 백엔드 토글: finbert(기본) | llm
+          # llm 사용 시 repo secret 으로 ANTHROPIC_API_KEY 를 등록하세요.
+          SENTIMENT_BACKEND: "finbert"
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: "claude-opus-4-8"
           HF_HOME: ~/.cache/huggingface
           TOKENIZERS_PARALLELISM: "false"
           FINBERT_BATCH: "16"
