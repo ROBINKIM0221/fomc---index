@@ -2,8 +2,8 @@ name: Build & Deploy Pages (Serverless)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 0 * * *'   # 매일 09:30 KST
+  # schedule:
+  #   - cron: '30 0 * * *'
 
 permissions:
   contents: read
